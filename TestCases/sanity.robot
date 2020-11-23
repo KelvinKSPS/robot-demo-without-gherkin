@@ -4,8 +4,8 @@ Library  OperatingSystem
 Library  Collections
 Resource  ../Resources/common.robot
 Resource  ../PageObjects/sidi.robot
-Suite Teardown  Close All Browsers
 Test Teardown  Run Keyword If Test Failed    Capture Page Screenshot
+Suite Teardown  Close All Browsers
 
 *** Variables ***
 ${Browser}  Chrome
@@ -29,7 +29,7 @@ English page should be displayed If Translator Button is clicked
 Careers page should be displayed If Careers Option is clicked
   Start Browser and Maximize  ${URL}  ${Browser}
   Click Element   ${Menu Button}
-  Click Element   ${Careers Option} 
+  Wait and Click  ${Careers Option}
   ${Current Url}=     Get Location
   Should Be Equal As Strings    ${Current Url}  ${Careers Url}
   Close Browser
