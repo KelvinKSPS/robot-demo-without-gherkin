@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on linux)" generated="20201123 12:28:06.614" rpa="false">
+<suite id="s1" name="Sanity" source="/home/kelvin/Projects/robot-without-gerkin/TestCases/sanity.robot">
+<test id="s1-t1" name="Browser Start and Close">
+<kw name="Start Browser and Maximize" library="Resources1">
+<doc>This keyword receives a url, a browser and return the title</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<assign>
+<var>${Res}</var>
+</assign>
+<kw name="Append To Environment Variable" library="OperatingSystem">
+<doc>Appends given ``values`` to environment variable ``name``.</doc>
+<arguments>
+<arg>PATH</arg>
+<arg>Resources/</arg>
+</arguments>
+<msg timestamp="20201123 12:28:06.860" level="INFO">Environment variable 'PATH' set to value '/home/kelvin/bin:/usr/local/bin:/usr/local/nvm/versions/node/v13.0.1/bin:/home/kelvin/bin:/usr/local/bin:/home/kelvin/.local/bin:/home/kelvin/bin:/usr/local/nvm/versions/node/v13.0.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/kelvin/seaecom/ecom-dev-setup/utils:/home/kelvin/seaecom/ecom-dev-setup/utils:Resources/'.</msg>
+<status status="PASS" starttime="20201123 12:28:06.860" endtime="20201123 12:28:06.860"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${UserURL}</arg>
+<arg>${InputBrowser}</arg>
+</arguments>
+<msg timestamp="20201123 12:28:06.861" level="INFO">Opening browser 'Chrome' to base url 'http://www.sidi.org.br'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20201123 12:28:06.866" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20201123 12:28:06.865" endtime="20201123 12:28:06.866"></status>
+</kw>
+<msg timestamp="20201123 12:28:06.868" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</msg>
+<status status="FAIL" starttime="20201123 12:28:06.861" endtime="20201123 12:28:06.868"></status>
+</kw>
+<status status="FAIL" starttime="20201123 12:28:06.859" endtime="20201123 12:28:06.868"></status>
+</kw>
+<status status="FAIL" starttime="20201123 12:28:06.858" endtime="20201123 12:28:06.869" critical="yes">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</status>
+</test>
+<status status="FAIL" starttime="20201123 12:28:06.615" endtime="20201123 12:28:06.870"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Sanity">Sanity</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
